@@ -1,0 +1,57 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        color_good = "#B5BD68"
+        color_bad = "#CC6666"
+        interval = 10
+}
+
+order+="ethernet eth0"
+order+= "volume master"
+order += "memory"
+order += "tztime local"
+
+
+
+wireless wlan0 {
+    format_up = "(%essid): %ip"
+    format_down = "Disconnected"
+    format_quality = "%03d%s"
+  }
+memory {
+    format = " Mem : %used"
+  }
+
+battery 0 {
+        format = "%status %percentage"
+        format_down = "No bat"
+        status_chr = "⚡ CHR"
+        status_bat = "BAT"
+        status_unk = "? UNK"
+        status_full = "FUL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+ethernet eth0 {
+        format_up = " %ip [%speed]"
+        format_down = "Å [down]"
+}
+
+tztime local {
+        format = "%A %d %b %H:%M:%S"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
