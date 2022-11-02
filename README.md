@@ -1,5 +1,5 @@
 # linux-rice
-![Alt text](/preview.png?raw=true "Optional Title")
+![error](/preview.png?raw=true "Optional Title")
 ## Packages
 ```
 terminal - kitty
